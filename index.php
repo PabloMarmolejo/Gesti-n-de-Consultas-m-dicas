@@ -130,11 +130,11 @@ if (isset($_GET['section'])) {
             break;
 
         default:
-            echo '<h2>Bienvenido a la gestión de consultas</h2>';
+            echo '<h2>Bienvenido a la Gestión de Consultas</h2>';
             break;
     }
 } else {
-    echo '<h2>Bienvenido a la gestión de consultas</h2>';
+    echo '<h2>Bienvenido a la Gestión de Consultas</h2>';
 }
 ?>
 </div>
