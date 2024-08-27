@@ -120,6 +120,9 @@ if (isset($_GET['section'])) {
                         echo '<p>ID no especificado.</p>';
                     }
                     break;
+                case 'generarReportePdf':
+                    $pacientesController->generarReportePdf();
+                    break;
                 default:
                     $pacientesController->index();
                     break;

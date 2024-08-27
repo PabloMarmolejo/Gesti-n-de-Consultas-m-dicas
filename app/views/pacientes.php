@@ -1,8 +1,7 @@
-<h2>Sección de pacientes</h2>
-<p>Aquí puedes gestionar las pacientes.</p>
 <div class="container mt-4">
     <h2>Pacientes</h2>
     <a href="index.php?section=pacientes&action=create" class="btn btn-primary mb-2">Nuevo Paciente</a>
+    <a href="index.php?section=pacientes&action=generarReportePdf" class="btn btn-info mb-2">Descargar Reporte PDF</a>
     <table class="table">
         <thead>
             <tr>
