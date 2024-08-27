@@ -1,7 +1,10 @@
 <div class="container mt-4">
     <h2>Consultas</h2>
     <a href="index.php?section=consultas&action=create" class="btn btn-primary mb-2">Nueva Consulta</a>
-    <table class="table">
+    <a href="index.php?section=consultas&action=generarReporte" class="btn btn-success mb-2">Descargar Reporte CSV</a>
+    <a href="index.php?section=consultas&action=generarReporteXlsx" class="btn btn-info mb-2">Descargar Reporte XLSX</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
         <thead>
             <tr>
                 <th>Fecha</th>
@@ -15,17 +18,26 @@
         <tbody>
             <?php foreach ($consultas as $consulta): ?>
                 <tr>
-                    <td><?= htmlspecialchars($consulta['fecha_consulta']) ?></td>
+                    <td><?= htmlspecialchars(
+                        $consulta['fecha_consulta']
+                    ) ?></td>
                     <td><?= htmlspecialchars($consulta['nombre_medico']) ?></td>
-                    <td><?= htmlspecialchars($consulta['nombre_paciente']) ?></td>
+                    <td><?= htmlspecialchars(
+                        $consulta['nombre_paciente']
+                    ) ?></td>
                     <td><?= htmlspecialchars($consulta['tratamiento']) ?></td>
                     <td><?= htmlspecialchars($consulta['costo']) ?></td>
                     <td>
-                        <a href="index.php?section=consultas&action=edit&id=<?= $consulta['folio'] ?>" class="btn btn-warning btn-sm">Editar</a>
-                        <a href="index.php?section=consultas&action=delete&id=<?= $consulta['folio'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar esta consulta?');">Eliminar</a>
+                        <a href="index.php?section=consultas&action=edit&id=<?= $consulta[
+                            'folio'
+                        ] ?>" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="index.php?section=consultas&action=delete&id=<?= $consulta[
+                            'folio'
+                        ] ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar esta consulta?');">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 </div>

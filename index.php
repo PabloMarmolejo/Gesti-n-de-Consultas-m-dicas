@@ -34,6 +34,7 @@ require_once 'db.php';
 require_once 'app/controllers/ConsultasController.php';
 require_once 'app/controllers/MedicosController.php';
 require_once 'app/controllers/PacientesController.php';
+require 'vendor/autoload.php';
 
 $consultasController = new ConsultasController($db);
 $medicosController = new MedicosController($db);
@@ -62,6 +63,12 @@ if (isset($_GET['section'])) {
                     } else {
                         echo '<p>ID no especificado.</p>';
                     }
+                    break;
+                case 'generarReporte':
+                    $consultasController->generarReporte();
+                    break;
+                case 'generarReporteXlsx':
+                    $consultasController->generarReporteXlsx();
                     break;
                 default:
                     $consultasController->index();
